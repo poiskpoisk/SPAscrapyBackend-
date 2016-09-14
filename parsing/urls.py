@@ -7,5 +7,6 @@ from parsing import views
 urlpatterns = [
     url(r'^stat/$',  views.statMsgList),
     url(r'^quene/$', views.queneList),
+    url(r'^start/$', views.startParsing),
 ]
 
