@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -137,3 +136,4 @@ CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:8000/start/'
     'localhost:3000',
 )
+

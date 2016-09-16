@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style type="text/css">
+           #firstBlock {
+            background: url( {{parsingDATA.source_image_url}} ) repeat-x;
+           }
+            #secondBlock {
+            background: url( {{source_image_url2}} ) repeat-x;
+           }
+            #thirdBlock {
+            background: url( {{source_image_url3}} ) repeat-x;
+           }
+       </style>
+
+</head>
+
+
+<body>
+
+    <div id="firstBlock">
+        <p><strong>ID# {{parsingDATA.id}}</strong></p>
+        <p>Parsing URL: {{parsingDATA.parsingURL}}</p>
+        <p>Title: {{parsingDATA.title}}</p>
+        <p>H1: {{parsingDATA.h1}}</p>
+        <p>Source image URL: {{parsingDATA.source_image_url}}</p>
+        <p>Image URL: {{parsingDATA.image_url}}</p>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div id="secondBlock">
+        <p><strong>ID# {{id2}}</strong></p>
+        <p>Parsing URL: {{parsingURL2}}</p>
+        <p>Title: {{title2}}</p>
+        <p>H1: {{h12}}</p>
+        <p>Source image URL: {{source_image_url2}}</p>
+        <p>Image URL: {{image_url2}}</p>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div id="thirdBlock">
+        <p><strong>ID# {{id3}}</strong></p>
+        <p>Parsing URL: {{parsingURL3}}</p>
+        <p>Title: {{title3}}</p>
+        <p>H1: {{h13}}</p>
+        <p>Source image URL: {{source_image_url3}}</p>
+        <p>Image URL: {{image_url3}}</p>
+    </div>
+
+</body>
+</html>

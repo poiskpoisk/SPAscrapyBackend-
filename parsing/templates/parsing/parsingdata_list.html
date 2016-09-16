@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block content %}
+    <h2>Parsing data by ID</h2>
+    <ul>
+        {% for record in parsingDATA %}
+            <li><a href="/{{ record.id }}/"> {{ record.id }} </a>  {{record.parsingURL}} {{record.title}} {{record.h1}} {{record.image_url}} </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+</body>
+</html>
