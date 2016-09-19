@@ -6,10 +6,10 @@ RUN apt-get update && apt-get install --yes \
 
 RUN pip3 install --upgrade pip
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN pip install django
-RUN pip install djangorestframework
-RUN pip install django-cors-middleware 
-RUN pip install lxml
+RUN pip3 install django
+RUN pip3 install djangorestframework
+RUN pip3 install django-cors-middleware 
+RUN pip3 install lxml
 RUN git clone https://github.com/poiskpoisk/testjob2backend
 ENV DJANGO_SETTINGS_MODULE testjob2.settings
 EXPOSE 8000
