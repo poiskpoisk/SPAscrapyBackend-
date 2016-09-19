@@ -14,6 +14,7 @@ from testjob2.settings import  BASE_DIR, STATIC_URL
 import datetime
 import re
 import time
+import pytz
 
 pendingFlag = True
 
@@ -55,6 +56,7 @@ def scheduleParsing( request ):
         serializer.save()
         sm = StatMsg(parsingURL='No URL', msg='DATATIME set')
         sm.save()
+        print( 'raw', serializer.data['strDataTime'])
         dt = datetime.datetime.strptime( serializer.data['strDataTime'], "%Y-%m-%dT%H:%M")
         arg = ( dt, request )
         print('Calling scheduler on ', arg[0], 'time')
@@ -94,7 +96,7 @@ def startParsing(request):
     for rec in records:
         urls.append((rec.parsingURL, rec.id))
 
-    with futures.ThreadPoolExecutor(5) as executor:
+    with futures.ThreadPoolExecutor(6) as executor:
         myfutures = [executor.submit(singleGrab, url) for url in urls]
 
     return Response("START parsing weel done", status=status.HTTP_100_CONTINUE )
@@ -224,12 +226,18 @@ def scheduler( arg ):
         print ('Scheduler started ')
 
         msg = "Scheduler started "
+        tz = pytz.timezone('Europe/Moscow')
+
         sm = StatMsg(parsingURL='No URL', msg=msg)
         sm.save()
 
         while True:
-            now_time = datetime.datetime.now()
+            now_time = datetime.datetime.now(tz)
+            s = now_time.strftime("%Y-%m-%dT%H:%M")
+            now_time = datetime.datetime.strptime(s, "%Y-%m-%dT%H:%M")
+
             time.sleep(1)
+
             if now_time > arg[0]:
                 startParsing( arg[1])
                 return
