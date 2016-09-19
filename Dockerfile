@@ -10,6 +10,7 @@ RUN pip3 install django
 RUN pip3 install djangorestframework
 RUN pip3 install django-cors-middleware 
 RUN pip3 install lxml
+RUN pip3 install pytz
 RUN git clone https://github.com/poiskpoisk/testjob2backend
 ENV DJANGO_SETTINGS_MODULE testjob2.settings
 EXPOSE 8000
