@@ -9,13 +9,13 @@ selected www sites, full functions description you may see at [Test job descript
 + _Parsing:_      lxml
 + _Other:_        docker, git
 
-Screencast with function demonstration and my description
+Screencast with function demonstration and my description - [10 min YouTube video]( https://youtu.be/a7VWYlt-kZU )
 
 #__Usage:__
 + sudo docker pull abakumov/testjob2backend
 + sudo docker pull abakumov/testjob2frontend
 + sudo docker docker run -i -t -p 8000:8000 abakumov/testjob2backend
-+ sudo docker docker run -i -t -p 8000:8000 abakumov/testjob2frontend
++ sudo docker docker run -i -t -p 3000:3000 abakumov/testjob2frontend
 + admin panel backend see at browser http://127.0.0.4:8000/admin/  _Login/pwd:_ ama/alex1972
 + app see at browser http://localhost:3000/
 
